@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="interdroid.swan.cadence_sensor"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".CadenceSensor$ConfigurationActivity"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher" >
+            <meta-data
+                android:name="entityId"
+                android:value="cadence" />
+            <meta-data
+                android:name="valuePaths"
+                android:value="crank_revolutions,wheel_revolutions,status_text" />
+            <meta-data
+                android:name="units"
+                android:value="revolutions,revolutions," />
+            <meta-data
+                android:name="authority"
+                android:value="interdroid.swan.cadence_sensor.cadence" />
+
+            <intent-filter>
+                <action android:name="interdroid.swan.sensor.DISCOVER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".CadenceSensor"
+            android:exported="true" >
+        </service>
+
+        <provider
+            android:name="interdroid.swan.cadence_sensor.CadenceSensor$Provider"
+            android:authorities="interdroid.swan.cadence_sensor.cadence"
+            android:exported="true" />
+    </application>
+
+    <uses-permission android:name="interdroid.vdb.permission.READ_DATABASE" />
+    <uses-permission android:name="interdroid.vdb.permission.WRITE_DATABASE" />
+
+</manifest>

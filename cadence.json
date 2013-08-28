@@ -1,0 +1,7 @@
+{"name": "cadence",
+ "namespace": "interdroid.swan.cadence_sensor",
+ "doc": "A sensor for Wahoo Blue SC cycling speed and cadence sensor (or compatible devices)",
+ "author": "roelof &lt;rkemp@cs.vu.nl&gt;",
+ "configs": [],
+ "valuePaths": [{"name":"crank_revolutions", "type":"int"}, {"name":"wheel_revolutions", "type":"int"}, {"name":"status_text", "type":"string"}],
+}

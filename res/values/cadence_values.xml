@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- cadence sensor -->
+    <string-array name="cadence_valuepaths">
+        <item>crank_revolutions</item>
+        <item>wheel_revolutions</item>
+        <item>status_text</item>
+    </string-array>
+
+
+</resources>
